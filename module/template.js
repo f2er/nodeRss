@@ -1,5 +1,5 @@
 
-var rssFeed = require('./node_modules/feed-read'),
+var rssFeed = require('../node_modules/feed-read'),
     url = require("url"),
 	urls = [
         "http://daily.manong.io/r/069xb",

@@ -1,5 +1,5 @@
-var cheerio = require("./node_modules/cheerio"); 
-var server = require("./curl"); 
+var cheerio = require("../node_modules/cheerio"); 
+var server = require("../module/curl"); 
 
 //var url = "http://www.tuicool.com/mags/53ba57b5d91b141eb6152331" 
 function fetch(res,url){

@@ -3,7 +3,7 @@ var http = require("http"),
     port = process.env.PORT || 8888;
     
 
-var template = require("./template.js");
+var template = require("./module/template.js");
 
 
 http.createServer(function (req, res) { 
