@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
 
     var _site = url.parse(req.url,true).query.site;
 
-    template(_site,res);
+    template(_site,res,req);
 
 
 }).listen(port);
