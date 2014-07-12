@@ -22,6 +22,9 @@ function template(_site,res,req){
     	rssFeed( urls[1],function(err,data){
     		fetch( res,data[args].link);
     	});
+        /*rssFeed( urls[1],function(err,data){
+            displayTuicool(res,data);
+        });*/
     }
 
     if( _site == "sheji" ){
