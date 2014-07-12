@@ -1,11 +1,7 @@
 var http = require("http"),
     url = require("url"),
-    port = process.env.PORT || 5000, 
-    urls = [
-        "http://daily.manong.io/r/069xb",
-        "http://feed.feedsky.com/programming_madman",
-        "http://feed.feedsky.com/design_craft"
-    ];
+    port = process.env.PORT || 8888;
+    
 
 var template = require("./template.js");
 
