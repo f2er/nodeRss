@@ -5,7 +5,11 @@ var rssFeed = require('../node_modules/feed-read'),
         "http://daily.manong.io/r/069xb",
         "http://feed.feedsky.com/programming_madman",
         "http://feed.feedsky.com/design_craft",
-        "http://news.dbanotes.net/rss"
+        "http://news.dbanotes.net/rss",
+        "http://javascriptweekly.com/rss/123ij1h9",
+        "http://mobilewebweekly.co/rss/25f32i80",
+        "http://nodeweekly.com/rss/21h1c7gi",
+        "http://html5weekly.com/rss/1nkpfj7c"
     ];
 
 var fetch = require("./fetch.js"); 
@@ -40,6 +44,36 @@ function template(_site,res,req){
             displayTuicool(res,data);
     	});
     }
+    
+    if( _site == "javascriptweekly" ){
+    	rssFeed( urls[4],function(err,data){
+    		displayTuicool(res,data);
+            //displayTuicool(res,data);
+    	});
+    }
+    
+    if( _site == "mobileWeb" ){
+    	rssFeed( urls[5],function(err,data){
+    		displayTuicool(res,data);
+            //displayTuicool(res,data);
+    	});
+    }
+    
+    if( _site == "nodeweekly" ){
+    	rssFeed( urls[6],function(err,data){
+    		displayTuicool(res,data);
+            //displayTuicool(res,data);
+    	});
+    }
+    
+    if( _site == "html5weekly" ){
+    	rssFeed( urls[7],function(err,data){
+    		displayTuicool(res,data);
+            //displayTuicool(res,data);
+    	});
+    }
+    
+    
 }
 
 function displayManong(res, data) {
