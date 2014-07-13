@@ -4,7 +4,8 @@ var rssFeed = require('../node_modules/feed-read'),
 	urls = [
         "http://daily.manong.io/r/069xb",
         "http://feed.feedsky.com/programming_madman",
-        "http://feed.feedsky.com/design_craft"
+        "http://feed.feedsky.com/design_craft",
+        "http://news.dbanotes.net/rss"
     ];
 
 var fetch = require("./fetch.js"); 
@@ -30,6 +31,13 @@ function template(_site,res,req){
     if( _site == "sheji" ){
     	rssFeed( urls[2],function(err,data){
     		displayTuicool(res,data);
+    	});
+    }
+    
+    if( _site == "startup" ){
+    	rssFeed( urls[3],function(err,data){
+    		//displayTuicool(res,data);
+            displayTuicool(res,data);
     	});
     }
 }
