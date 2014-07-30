@@ -1,3 +1,15 @@
+###已支持的rss
+
+* 码农周刊
+* 编程狂人（推库）
+* 设计匠艺 (推库)
+* startup news
+* javascript周刊
+* mobileweb周刊
+* nodeJS周刊
+* html5周刊
+* 75team周刊
+
 ###运行  
 node rss.js
 
