@@ -9,7 +9,8 @@ var rssFeed = require('../node_modules/feed-read'),
         "http://javascriptweekly.com/rss/123ij1h9",
         "http://mobilewebweekly.co/rss/25f32i80",
         "http://nodeweekly.com/rss/21h1c7gi",
-        "http://html5weekly.com/rss/1nkpfj7c"
+        "http://html5weekly.com/rss/1nkpfj7c",
+        "http://www.75team.com/weekly/rss.php"
     ];
 
 var fetch = require("./fetch.js"); 
@@ -17,7 +18,7 @@ var fetch = require("./fetch.js");
 function template(_site,res,req){
 	if( _site == "manong" ){
     	rssFeed( urls[0],function(err,data){
-    		displayManong(res,data);
+    		display_tpl_mq(res,data);
     	});
     }
 
@@ -68,21 +69,29 @@ function template(_site,res,req){
     
     if( _site == "html5weekly" ){
     	rssFeed( urls[7],function(err,data){
-    		displayTuicool(res,data);
-            //displayTuicool(res,data);
+    		//console.log(data);
+            displayTuicool(res,data);
     	});
+    }
+
+    if( _site == "75team" ){
+        rssFeed( urls[8],function(err,data){
+            display_tpl_mq(res,data);
+            //console.log(data);
+        })
     }
     
     
 }
 
-function displayManong(res, data) {
+function display_tpl_mq(res, data) {
 	var _template = "";
 	for( var i in data ){
 	  	_template += "<h2>"+data[i].title+"</h2>";
   		_template += data[i].content;
-  		res.write(_template);
+  		
 	}
+    res.write(_template);
 }
 
 function displayTuicool(res,data){
@@ -93,8 +102,8 @@ function displayTuicool(res,data){
 	}
 	_template +="</ul>";
 	res.write(_template);
-
 }
+
 
 
 module.exports = template;
