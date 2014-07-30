@@ -10,7 +10,8 @@ var rssFeed = require('../node_modules/feed-read'),
         "http://mobilewebweekly.co/rss/25f32i80",
         "http://nodeweekly.com/rss/21h1c7gi",
         "http://html5weekly.com/rss/1nkpfj7c",
-        "http://www.75team.com/weekly/rss.php"
+        "http://www.75team.com/weekly/rss.php",
+        "http://geek.csdn.net/news/rss"
     ];
 
 var fetch = require("./fetch.js"); 
@@ -80,6 +81,13 @@ function template(_site,res,req){
             //console.log(data);
         })
     }
+
+    if( _site == "csdn" ){
+        rssFeed( urls[9],function(err,data){
+            display_tpl_csdn(res,data);
+            //console.log(data);
+        })
+    }
     
     
 }
@@ -91,6 +99,15 @@ function display_tpl_mq(res, data) {
   		_template += data[i].content;
   		
 	}
+    res.write(_template);
+}
+
+function display_tpl_csdn(res, data) {
+    var _template = "<ul>";
+    for( var i in data ){
+        _template += '<li><a href="'+data[i].link+'">'+data[i].title+'</a></li>';
+    }
+    _template +="</ul>";
     res.write(_template);
 }
 

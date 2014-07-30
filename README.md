@@ -9,6 +9,7 @@
 * nodeJS周刊
 * html5周刊
 * 75team周刊
+* 极客头条
 
 ###运行  
 node rss.js
@@ -16,7 +17,7 @@ node rss.js
 ###调用方式
 
 * http://localhost:8888/?site=manong
-* http://localhost:8888/?site=biancheng&num=1
+* http://localhost:8888/?site=biancheng&num=0
 
 ###技术点
 
