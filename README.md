@@ -1,4 +1,7 @@
-###调用方式：
+###运行  
+node rss.js
+
+###调用方式
 
 * http://localhost:8888/?site=manong
 * http://localhost:8888/?site=biancheng&num=1
